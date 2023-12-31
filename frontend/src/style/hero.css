@@ -1,0 +1,9 @@
+.hero-img{
+    background: url(../assets/hero-img.jpeg);
+    width: 100vw;
+    height: 45vh;
+    object-fit: cover;
+    background-position: center;
+    background-size: cover;
+}
+
