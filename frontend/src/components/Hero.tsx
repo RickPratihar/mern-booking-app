@@ -3,7 +3,7 @@ const Hero = () => {
   return (
     <div className="hero-img ">
       
-        <div className=" container mx-auto flex flex-col mt-16  ">
+        <div className=" container mx-auto flex flex-col mt-10  ">
           <h1 className="sm:text-2xl md:text-5xl text-white font-bold w-[16ch] md:leading-normal  ">
             Wanderlust days and cozy nights
           </h1>

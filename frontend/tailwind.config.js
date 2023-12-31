@@ -10,7 +10,7 @@ export default {
       }
     },
     screens: {
-      sm: '480px',
+      sm: '470px',
       // => @media (min-width: 576px) { ... }
 
       md: '960px',
