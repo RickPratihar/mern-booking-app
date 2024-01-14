@@ -12,7 +12,7 @@ const Hero = () => {
           </p>
         </div>
         <div className="container mx-auto mt-5">
-          <button className="sm:py-2 md:py-3 px-2 rounded font-medium text-white hover:bg-[#165fb3] bg-[#006CE4] ">Explore holiday rentals</button>
+          <button className="sm:py-2 md:py-3 text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 ">Explore holiday rentals</button>
           </div>
 
       </div>

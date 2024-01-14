@@ -19,7 +19,8 @@ const upload = multer({
 
 // api/my-hotels
 router.post("/",
-    verifyToken, [
+    verifyToken,
+     [
     body("name").notEmpty().withMessage("Name is required"),
     body("city").notEmpty().withMessage("City is required"),
     body("country").notEmpty().withMessage("Country is required"),
@@ -65,6 +66,17 @@ router.post("/",
             res.status(500).json({ message: "something went wrong" });
 
         }
-    })
+    }
+);
 
-    export default router;
+router.get("/", verifyToken, async (req: Request, res: Response) => {
+
+    try {
+        const hotels = await Hotel.find({ userId: req.userId });
+        res.json(hotels);
+    } catch (error) {
+        res.status(500).json({ message: "Error fetching hotels" })
+    }
+})
+
+export default router;
