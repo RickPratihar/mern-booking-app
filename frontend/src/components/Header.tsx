@@ -17,7 +17,7 @@ const Header = () => {
           {isLoggedIn ? (
             <>
               <Link className=" flex items-center text-white px-3  font-bold hover:bg-blue-600 rounded" to="/my-bookings">My Bookings</Link>
-              <Link className="flex items-center text-white px-3  font-bold hover:bg-blue-600 rounded " to="/my-hotels">My Hotels</Link>
+              <Link className="flex items-center text-white px-3  font-bold hover:bg-blue-600 rounded " to="/my-hotel">My Hotels</Link>
               <SignOutButton/>
             </>
           ) : (
@@ -46,7 +46,7 @@ const Header = () => {
           {isLoggedIn ? (
             <>
               <Link className=" flex items-center justify-center text-xl text-white px-3  font-bold hover:bg-blue-600 rounded" to="/my-bookings">My Bookings</Link>
-              <Link className="flex items-center justify-center text-xl text-white px-3  font-bold hover:bg-blue-600 rounded " to="/my-hotels">My Hotels</Link>
+              <Link className="flex items-center justify-center text-xl text-white px-3  font-bold hover:bg-blue-600 rounded " to="/my-hotel">My Hotels</Link>
               <SignOutButton/>
             </>
           ) : (
