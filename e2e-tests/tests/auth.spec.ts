@@ -8,6 +8,7 @@ test("should allow the user to sign in", async ({ page }) => {
   // get the sign in button
   await page.getByRole("link", { name: "Sign In" }).click();
 
+
   await expect(page.getByRole("heading", { name: "Sign In" })).toBeVisible();
 
   await page.locator("[name=email]").fill("1@1.com");

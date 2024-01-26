@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <div className="bg-blue-800 py-6 ">
       <div className="container mx-auto flex justify-between ">
-        <span className="sm:text-xl md:text-3xl  text-white font-bold tracking-tight">
+        <span className="text-xl md:text-2xl lg:text-3xl text-white font-bold tracking-tight">
           <Link to="/">Holiday-Booking.com</Link>
         </span>
         <span className=" space-x-2 hidden md:flex ">
