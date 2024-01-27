@@ -6,8 +6,9 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useNavigate } from "react-router-dom";
 
 const SearchBar = () => {
+  const navigate = useNavigate();
   const search = useSearchContext();
-const navigate = useNavigate();
+
   const [destination, setDestination] = useState<string>(search.destination);
   const [checkIn, setCheckIn] = useState<Date>(search.checkIn);
   const [checkOut, setCheckOut] = useState<Date>(search.checkOut);
@@ -105,7 +106,6 @@ const navigate = useNavigate();
           Clear
         </button>
       </div>
-      
     </form>
   );
 };
