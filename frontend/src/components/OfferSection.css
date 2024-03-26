@@ -1,0 +1,39 @@
+
+  
+  .offer-heading h1 {
+    font-size: 1.5rem;
+  }
+  .offer-heading p {
+    font-size: 0.9rem;
+    color: #5a5a5a;
+  }
+  
+  .offer {
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 25px;
+    width: 95%;
+    padding: 20px;
+    border-radius: 10px;
+   
+  }
+
+  .offer-imgs{
+    width:90%;
+    height:11rem;
+    border-radius: 10px;
+  }
+
+  .img1 {
+    width: 8rem;
+    height: auto;
+    border-radius: 10px;
+    
+  }
+  .offer-content{
+    /* display: none; */
+    position: absolute;
+    margin-top: 40px;
+  }
+
+
+ 
