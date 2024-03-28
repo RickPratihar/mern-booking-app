@@ -16,6 +16,7 @@ import Detail from "./pages/Detail";
 import Booking from "./pages/Booking";
 import MyBookings from "./pages/MyBookings";
 import Home from "./pages/Home";
+import BlogDetails from "./pages/blogDetails/BlogDetsils";
 
 const App = () => {
   const { isLoggedIn } = useAppContext();
@@ -44,6 +45,14 @@ const App = () => {
             <Layout>
               <Detail/>
             </Layout>
+          }
+        />
+        <Route
+          path="/blogDetails/:blogid"
+          element={
+            // <Layout>
+              <BlogDetails/>
+            // </Layout>
           }
         />
         <Route path="/register" element={<Register />} />

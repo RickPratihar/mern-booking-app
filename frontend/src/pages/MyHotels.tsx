@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import * as apiClient from "../api-client";
 import { BsBuilding, BsMap } from "react-icons/bs";
 import { BiHotel, BiMoney, BiStar } from "react-icons/bi";
+import ScrollToTop from "../components/ScrollToTop/ScrollToTop";
 
 const MyHotels = () => {
   const { data: hotelData } = useQuery(
@@ -68,6 +69,7 @@ const MyHotels = () => {
             </span>
           </div>
         ))}
+        <ScrollToTop />
       </div>
     </div>
   );

@@ -8,6 +8,7 @@ import StarRatingFilter from "../components/StarRatingFilter";
 import HotelTypesFilter from "../components/HotelTypesFilter";
 import FacilitiesFilter from "../components/FacilitiesFilter";
 import PriceFilter from "../components/PriceFilter";
+import ScrollToTop from "../components/ScrollToTop/ScrollToTop";
 
 const Search = () => {
   const search = useSearchContext();
@@ -127,6 +128,7 @@ const Search = () => {
           />
         </div>
       </div>
+      <ScrollToTop />
     </div>
   );
 };

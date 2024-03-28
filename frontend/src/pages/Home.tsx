@@ -2,6 +2,8 @@ import { useQuery } from "react-query";
 import * as apiClient from "../api-client";
 import LatestDestinationCard from "../components/LastestDestinationCard";
 import OfferSection from "../components/OfferSection";
+import Blog from "../components/blog/blog";
+import ScrollToTop from "../components/ScrollToTop/ScrollToTop";
 
 const Home = () => {
   const { data: hotels } = useQuery("fetchQuery", () =>
@@ -14,6 +16,7 @@ const Home = () => {
   return (
     <div className="space-y-3"> 
       <OfferSection/>
+      <Blog/>
       <h2 className="text-3xl font-bold">Latest Destinations</h2>
       <p>Most recent desinations added by our hosts</p>
       <div className="grid gap-4">
@@ -28,6 +31,7 @@ const Home = () => {
           ))}
         </div>
       </div>
+      <ScrollToTop/>
     </div>
   );
 };
