@@ -15,8 +15,11 @@ import Search from "./pages/Search";
 import Detail from "./pages/Detail";
 import Booking from "./pages/Booking";
 import MyBookings from "./pages/MyBookings";
-import Home from "./pages/Home";
+import Home from "./pages/Home"; 
 import BlogDetails from "./pages/blogDetails/BlogDetsils";
+import AboutUs from "./pages/AboutUs";
+import ContactUs from "./pages/ContactUs";
+import BlogPage from "./pages/blogpage/BlogPage";
 
 const App = () => {
   const { isLoggedIn } = useAppContext();
@@ -55,6 +58,9 @@ const App = () => {
             // </Layout>
           }
         />
+         <Route path="/about" element={<AboutUs />} />
+         <Route path="/contact" element={<ContactUs/>} />
+         <Route path="/blog" element={<BlogPage/>} />
         <Route path="/register" element={<Register />} />
         <Route path="/sign-in" element={<Signin />} />
 

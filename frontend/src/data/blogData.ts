@@ -93,7 +93,29 @@ const blogData = [
       description:
         " A London Christmas: cherished traditions and new discoveries.", 
     },
-  
+    
+    {
+      id: 5,
+      title: "New Year’s Eve in New York City",
+      date:"5 min read: 4 December",
+      imgUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRluRrLrcBuQzCHTJ9tQBow8M7R-FxZqbyH5g&usqp=CAU",
+      description: " Ring in the new year with iconic moments and unforgettable memories in New York City",
+      
+      des1:"No place does New Year’s Eve quite like New York City. The city that never sleeps lives true to its name each year with a vibrant tapestry of festivities that promise an unforgettable start to the 12 months ahead. Here are seven ideas for your New Year’s Eve getaway that’ll let you immerse yourself in the pulsating rhythm of New York City – and experience a celebration like no other.",
+      des2:"Experience the globally renowned New Year's Eve Ball Drop at Times Square, an iconic event that lures crowds from across the globe. Perched atop One Times Square, a geodesic sphere adorned with lights and glimmering crystal descends slowly, marking the arrival of the new year as the clock inches towards midnight.At the stroke of 12, the sphere completes its descent, triggering a spectacular display of fireworks and jubilant celebrations. The event is renowned for its electrifying atmosphere, set amid neon lights, animated billboards and the collective joy of thousands.Lock in a stay at Hotel Shocard Broadway, conveniently located just off Times Square, offering easy access to the heart of the festivities.",
+      des3:"Elevate your New Year's Eve experience – quite literally – with a timeless stroll across the iconic Brooklyn Bridge. As the city lights shimmer on the water below, think of each step you take as something of a journey from the past to the future. You’ll be treated to breathtaking views of the skyline on this symbolic and scenic route, no matter whether you take the stroll in quiet contemplation or lively celebration.Arrive well before midnight if catching the fireworks is your priority.From the bridge, you will have a prime view of the display in New York Harbor near Liberty Island. Other vistas worth catching from the bridge include the Empire State Building draped in special colours for New Year’s Eve, and the timeless silhouette of lower Manhattan and the Statue of Liberty.To be in a prime position for your New Year’s Eve exploration, get a room at the 33 Seaport Hotel, located right at the base of Brooklyn Bridge close to the Financial District.",
+      des4:"Elevate your New Year's Eve experience – quite literally – with a timeless stroll across the iconic Brooklyn Bridge. As the city lights shimmer on the water below, think of each step you take as something of a journey from the past to the future. You’ll be treated to breathtaking views of the skyline on this symbolic and scenic route, no matter whether you take the stroll in quiet contemplation or lively celebration.Arrive well before midnight if catching the fireworks is your priority. From the bridge, you'll have a prime view of the display in New York Harbor near Liberty Island. Other vistas worth catching from the bridge include the Empire State Building draped in special colours for New Year’s Eve, and the timeless silhouette of lower Manhattan and the Statue of Liberty.To be in a prime position for your New Year’s Eve exploration, get a room at the 33 Seaport Hotel, located right at the base of Brooklyn Bridge close to the Financial District.",
+
+      blogImgTitle1:"Times Square Ball Drop",
+      blogImgTitle2:"New Year’s Eve fireworks",
+      blogImgTitle3:"Brooklyn Bridge",
+
+      blogImg1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsJ_B16WQzpfmGdExYOEx1hWCfbF41rlXDWw&usqp=CAU",
+      blogImg2: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0hL9v4SzmfpIsfmTWPr4M7Xu6NjYxiysplA&usqp=CAU",
+      blogImg3: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMxR-mBizS0qti4UceCqBtQ86cCWjQGgR80A&usqp=CAU",
+      blogImg4: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUWF6s-qZPheCh_jxPvW2g9Ie9uWmoaLLPOQ&usqp=CAU",
+
+    },
     
   ];
   

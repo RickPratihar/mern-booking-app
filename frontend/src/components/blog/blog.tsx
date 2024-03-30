@@ -28,7 +28,7 @@ const Blog: React.FC = () => {
     <>
       <div className="blog-head flex justify-between pb-4 pt-4">
         <h1 className="heading text-2xl font-bold ">Get inspiration for your next trip</h1>
-        <Link to="/bloglist" className="more">More</Link>
+        <Link to="/blog" className="more">More</Link>
       </div>
       <div className="secContent flex">
         {limitedData.map((item, index) => {

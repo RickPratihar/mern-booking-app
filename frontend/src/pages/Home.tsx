@@ -4,6 +4,7 @@ import LatestDestinationCard from "../components/LastestDestinationCard";
 import OfferSection from "../components/OfferSection";
 import Blog from "../components/blog/blog";
 import ScrollToTop from "../components/ScrollToTop/ScrollToTop";
+import Testimonials from "../components/Testimonials";
 
 const Home = () => {
   const { data: hotels } = useQuery("fetchQuery", () =>
@@ -31,6 +32,7 @@ const Home = () => {
           ))}
         </div>
       </div>
+      <Testimonials/>
       <ScrollToTop/>
     </div>
   );

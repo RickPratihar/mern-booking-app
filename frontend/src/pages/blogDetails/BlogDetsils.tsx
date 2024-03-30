@@ -1,9 +1,10 @@
 import React from "react";
 import blogData from "../../data/blogData";
 import { useParams } from "react-router-dom";
-import "./blogDetails.css"
+import "./blogDetails.css";
 import Header from "../../components/Header";
 import ScrollToTop from "../../components/ScrollToTop/ScrollToTop";
+import Footer from "../../components/Footer";
 
 interface BlogItem {
   id: number; // Corrected here
@@ -23,21 +24,38 @@ interface BlogItem {
 }
 
 const BlogDetails: React.FC = () => {
-const { blogid }: { blogid?: string } = useParams();
+  const { blogid }: { blogid?: string } = useParams();
 
-if (!blogid) {
+  if (!blogid) {
     return <div>Blog ID not provided!</div>;
-}
+  }
 
-const blogItem: BlogItem | undefined = blogData.find((p) => p.id === Number(blogid)) || { id: 0, title: '', blogImg4: '', date: '', des1: '', blogImgTitle1: '', blogImg1: '', des2: '', blogImgTitle2: '', blogImg2: '', des3: '', blogImgTitle3: '', blogImg3: '', des4: ''};
+  const blogItem: BlogItem | undefined = blogData.find(
+    (p) => p.id === Number(blogid)
+  ) || {
+    id: 0,
+    title: "",
+    blogImg4: "",
+    date: "",
+    des1: "",
+    blogImgTitle1: "",
+    blogImg1: "",
+    des2: "",
+    blogImgTitle2: "",
+    blogImg2: "",
+    des3: "",
+    blogImgTitle3: "",
+    blogImg3: "",
+    des4: "",
+  };
 
-if (!blogItem) {
+  if (!blogItem) {
     return <div>Blog not found!</div>;
-}
+  }
 
   return (
     <>
-    <Header />
+      <Header />
       <div className="blog-hero-img">
         <img src={blogItem.blogImg4} alt="" />
       </div>
@@ -62,6 +80,8 @@ if (!blogItem) {
         <img src={blogItem.blogImg3} alt="" />
         <p>{blogItem.des4}</p>
       </div>
+      <Footer />
+
       <ScrollToTop />
     </>
   );

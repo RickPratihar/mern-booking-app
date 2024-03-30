@@ -10,10 +10,13 @@ const Header = () => {
   return (
     <div className="bg-blue-800 py-6 top-0 sticky z-50">
       <div className="container mx-auto flex justify-between ">
-        <span className="text-xl md:text-2xl lg:text-3xl text-white font-bold tracking-tight">
-          <Link to="/">Holiday-Booking.com</Link>
+        <span className="text-xl md:text-2xl lg:text-3xl text-white font-bold tracking-tight font-">
+          <Link to="/">DreamStayHub</Link>
         </span>
         <span className=" space-x-2 hidden md:flex ">
+        <Link className=" flex items-center text-white px-3  font-bold hover:bg-blue-600 rounded" to="/about">About Us</Link>
+        <Link className=" flex items-center text-white px-3  font-bold hover:bg-blue-600 rounded" to="/contact">Contact us</Link>
+        <Link className=" flex items-center text-white px-3  font-bold hover:bg-blue-600 rounded" to="/blog">Blog</Link>
           {isLoggedIn ? (
             <>
               <Link className=" flex items-center text-white px-3  font-bold hover:bg-blue-600 rounded" to="/my-bookings">My Bookings</Link>
