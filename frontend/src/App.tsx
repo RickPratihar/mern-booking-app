@@ -25,6 +25,7 @@ import LocomotiveScroll from 'locomotive-scroll';
 const App = () => {
 
 const locomotiveScroll = new LocomotiveScroll();
+locomotiveScroll;
 
   const { isLoggedIn } = useAppContext();
   return (
