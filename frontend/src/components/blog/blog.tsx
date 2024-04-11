@@ -30,7 +30,7 @@ const Blog: React.FC = () => {
         <h1 className="heading text-2xl font-bold ">Get inspiration for your next trip</h1>
         <Link to="/blog" className="more">More</Link>
       </div>
-      <div className="secContent flex">
+      <div className="secContent flex flex-col md:flex-row">
         {limitedData.map((item, index) => {
           return (
             <div key={index} className="blog-item">

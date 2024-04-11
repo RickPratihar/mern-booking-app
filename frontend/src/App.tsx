@@ -20,8 +20,12 @@ import BlogDetails from "./pages/blogDetails/BlogDetsils";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
 import BlogPage from "./pages/blogpage/BlogPage";
+import LocomotiveScroll from 'locomotive-scroll';
 
 const App = () => {
+
+const locomotiveScroll = new LocomotiveScroll();
+
   const { isLoggedIn } = useAppContext();
   return (
     <Router>

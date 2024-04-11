@@ -57,7 +57,7 @@ const Wrapper = styled.section`
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
     border-radius: 50%;
     position: fixed;
-    bottom: 3rem;
+    bottom: 1rem;
     right: 3rem;
     z-index: 999;
     display: flex;

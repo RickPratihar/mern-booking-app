@@ -3,6 +3,7 @@ import { useMutation, useQueryClient } from "react-query";
 import * as apiClient from "../api-client";
 import { useAppContext } from "../contexts/AppContext";
 import { Link, useNavigate } from "react-router-dom";
+import Header from "../components/Header";
 
 export type RegisterFormData = {
   firstName: string;
@@ -127,20 +128,27 @@ const Register = () => {
           </button>
         </span>
       </form> */}
-
+      <Header />
       <div className="h-full bg-transparent">
         <div className="mx-auto">
           <div className="flex justify-center px-6 py-12">
             <div className="w-full xl:w-3/4 lg:w-11/12 flex">
               <div
-                className="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 h-full items-center justify-center flex bg-cover bg-center bg-fixed" style={{ backgroundImage: "url('https://www.thomascook.in/blog/wp-content/uploads/2023/04/beach-1.jpg')" }}
+                className="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 h-full items-center justify-center flex bg-cover bg-center bg-fixed"
+                // style={{
+                //   backgroundImage:
+                //     "url('https://www.thomascook.in/blog/wp-content/uploads/2023/04/beach-1.jpg')",
+                // }}
               >
                 <div className="w-full lg:w-3/12 bg-white dark:bg-gray-700 p-5 rounded-lg lg:rounded-l-none">
                   <h3 className="py-4 text-2xl text-center text-gray-800 dark:text-white">
                     Create an Account!
                   </h3>
 
-                  <form className="px-8 pt-6 pb-8 mb-4 bg-white dark:bg-gray-800 rounded" onSubmit={onSubmit}>
+                  <form
+                    className="px-8 pt-6 pb-8 mb-4 bg-white dark:bg-gray-800 rounded"
+                    onSubmit={onSubmit}
+                  >
                     <div className="mb-4 md:flex md:justify-between">
                       <div className="mb-4 md:mr-2 md:mb-0">
                         <label
@@ -154,10 +162,14 @@ const Register = () => {
                           id="firstName"
                           type="text"
                           placeholder="First Name"
-                          {...register("firstName", { required: "This field is required" })}
+                          {...register("firstName", {
+                            required: "This field is required",
+                          })}
                         />
                         {errors.firstName && (
-                          <span className="text-red-500">{errors.firstName.message}</span>
+                          <span className="text-red-500">
+                            {errors.firstName.message}
+                          </span>
                         )}
                       </div>
 
@@ -173,13 +185,16 @@ const Register = () => {
                           id="lastName"
                           type="text"
                           placeholder="Last Name"
-                          {...register("lastName", { required: "This field is required" })}
+                          {...register("lastName", {
+                            required: "This field is required",
+                          })}
                         />
                         {errors.lastName && (
-                          <span className="text-red-500">{errors.lastName.message}</span>
+                          <span className="text-red-500">
+                            {errors.lastName.message}
+                          </span>
                         )}
                       </div>
-
                     </div>
                     <div className="mb-4">
                       <label
@@ -193,10 +208,14 @@ const Register = () => {
                         id="email"
                         type="email"
                         placeholder="Email"
-                        {...register("email", { required: "This field is required" })}
+                        {...register("email", {
+                          required: "This field is required",
+                        })}
                       />
                       {errors.email && (
-                        <span className="text-red-500">{errors.email.message}</span>
+                        <span className="text-red-500">
+                          {errors.email.message}
+                        </span>
                       )}
                     </div>
                     <div className="mb-4 md:flex md:justify-between">
@@ -204,7 +223,6 @@ const Register = () => {
                         <label
                           className="block mb-2 text-sm font-bold text-gray-700 dark:text-white"
                           htmlFor="password"
-
                         >
                           Password
                         </label>
@@ -221,7 +239,9 @@ const Register = () => {
                           })}
                         />
                         {errors.password && (
-                          <span className="text-red-500">{errors.password.message}</span>
+                          <span className="text-red-500">
+                            {errors.password.message}
+                          </span>
                         )}
                       </div>
                       <div className="md:ml-2">
@@ -246,7 +266,9 @@ const Register = () => {
                           })}
                         />
                         {errors.confirmPassword && (
-                          <span className="text-red-500">{errors.confirmPassword.message}</span>
+                          <span className="text-red-500">
+                            {errors.confirmPassword.message}
+                          </span>
                         )}
                       </div>
                     </div>
@@ -254,9 +276,9 @@ const Register = () => {
                     <div className="mb-6 text-center">
                       <button
                         className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 dark:bg-blue-700 dark:text-white dark:hover:bg-blue-900 focus:outline-none focus:shadow-outline"
-                         type="submit"
+                        type="submit"
                       >
-                       Create Account
+                        Create Account
                       </button>
                     </div>
 
