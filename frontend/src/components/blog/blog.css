@@ -77,7 +77,7 @@
   display: none;
 }
 
-@media screen and (min-width: 480px) and (max-width: 600px) {
+@media screen and (min-width: 400px) and (max-width: 600px) {
     .blog-head h1{
         font-size: 1.5rem;
     }
@@ -93,10 +93,10 @@
     font-size: 1.8rem;
   }
   .blog-img img {
-    width: 32rem;
+    width: 25rem;
   }
   .blog-img .special-image {
-    width: 32rem;
+    width: 25rem;
     height: 18rem;
     padding-right: 0px;
   }

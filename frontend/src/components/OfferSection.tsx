@@ -43,7 +43,7 @@ const OfferSection = () => {
         <h1 className="font-bold">Offers</h1>
         <p>Promotions, deals and special offers for you</p>
       </div>
-      <Slider {...settings} className="slider">
+      <Slider {...settings} className="slider p-5 md:p-0">
         <div className="testimonial">
           <div className="offer">
             <div className="offer-content1 ">
