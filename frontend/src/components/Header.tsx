@@ -68,8 +68,8 @@ const Header = () => {
       </div>
 
       {nav && (
-        <div className="container mx-auto flex justify-between md:hidden ">
-          <span className="flex flex-col absolute  pt-10 mr-10 mt-2 gap-5 w-full h-screen bg-gradient-to-b from-blue-900 to-gray-800 text-white">
+        <div className="container mx-auto flex justify-between md:hidden  delay-500">
+          <span className="flex flex-col absolute  pt-10 mr-10 mt-2 gap-5 w-full h-screen bg-gradient-to-b from-blue-900 to-gray-800 text-white ">
             {isLoggedIn ? (
               <>
                 <Link

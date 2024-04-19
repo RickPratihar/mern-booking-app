@@ -21,7 +21,7 @@ const DiscountPopup = () => {
   return (
     <div
       className={classNames(
-        "fixed inset-0 flex justify-center items-center bg-gray-900 bg-opacity-50 ",
+        "fixed inset-0 flex justify-center items-center bg-gray-900 bg-opacity-50 z-[9999] ",
         {
           hidden: !isOpen,
         }
