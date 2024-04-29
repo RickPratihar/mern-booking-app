@@ -25,8 +25,8 @@ const Blog: React.FC = () => {
   }, []);
 
   return (
-    <>
-      <div className="blog-head md:flex justify-between pb-4 pt-4 p-5 md:p-0  ">
+    <div className="hidden md:block">
+      <div className="blog-head md:flex justify-between pb-4 mb-10 pt-4 p-5 md:p-0 ">
         <h1 className="heading text-2xl font-bold ">Get inspiration for your next trip</h1>
         <Link to="/blog" className="more">More</Link>
       </div>
@@ -64,7 +64,7 @@ const Blog: React.FC = () => {
           );
         })}
       </div>
-    </>
+    </div>
   );
 };
 

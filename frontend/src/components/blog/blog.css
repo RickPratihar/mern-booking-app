@@ -94,10 +94,10 @@
     font-size: 1.8rem;
   }
   .blog-img img {
-    width: 25rem;
+    width: 100vw;
   }
   .blog-img .special-image {
-    width: 25rem;
+    width: 100vw;
     height: 18rem;
     padding-right: 0px;
   }

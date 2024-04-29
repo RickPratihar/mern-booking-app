@@ -5,5 +5,12 @@
 body{
     overflow-x: hidden;
     overflow-y: hidden;
+    min-height: 100vh;
+    scroll-behavior: smooth;
 }
-
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
