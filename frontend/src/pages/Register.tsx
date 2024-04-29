@@ -135,10 +135,10 @@ const Register = () => {
             <div className="w-full xl:w-3/4 lg:w-11/12 flex">
               <div
                 className="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 h-full items-center justify-center flex bg-cover bg-center bg-fixed"
-                // style={{
-                //   backgroundImage:
-                //     "url('https://www.thomascook.in/blog/wp-content/uploads/2023/04/beach-1.jpg')",
-                // }}
+                style={{
+                  backgroundImage:
+                    "url('https://www.thomascook.in/blog/wp-content/uploads/2023/04/beach-1.jpg')",
+                }}
               >
                 <div className="w-full lg:w-3/12 bg-white dark:bg-gray-700 p-5 rounded-lg lg:rounded-l-none">
                   <h3 className="py-4 text-2xl text-center text-gray-800 dark:text-white">

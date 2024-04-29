@@ -88,10 +88,21 @@ const blogData = [
 
     {
       id: 4,
-      title: "6 magical Christmas experiences in London",
-      imgUrl: img04,
-      description:
-        " A London Christmas: cherished traditions and new discoveries.", 
+      title: "Exploring Central Park in Spring",
+      date: "8 min read · 15 March",
+      imgUrl: "https://www.centralparknyc.org/assets/images/things-to-see-and-do/attractions/attraction-carousel-featured-image.jpg",
+      description: "Discover the beauty of Central Park in full bloom during the vibrant season of spring.",
+      des1: "As the chilly grasp of winter fades away, Central Park bursts into life with the arrival of spring. From colorful blooms to lush greenery, the park transforms into a breathtaking oasis amidst the bustling city. Here's a guide to exploring the wonders of Central Park in springtime.",
+      des2: "Take a leisurely stroll along the winding pathways and meadows of Central Park, adorned with cherry blossoms and tulips in full bloom. Rent a rowboat and glide across the serene waters of the park's iconic lakes, soaking in the picturesque views of the surrounding skyline and lush foliage.",
+      des3: "Indulge in a picnic amidst the natural splendor of Central Park's Great Lawn, surrounded by blankets of flowers and the sounds of chirping birds. Immerse yourself in the vibrant atmosphere of the park's cultural events and outdoor concerts, showcasing the talents of local artists and performers.",
+      des4: "Explore the park's hidden gems and landmarks, from the enchanting Bethesda Terrace and Fountain to the iconic Bow Bridge and Belvedere Castle. Embark on a guided walking tour or rent a bicycle to discover the park's diverse ecosystems and wildlife habitats, including woodlands, meadows, and streams.",
+      blogImgTitle1: "Cherry Blossoms in Central Park",
+      blogImgTitle2: "Rowing on the Lake",
+      blogImgTitle3: "Outdoor Concert at Central Park",
+      blogImg1: "https://www.centralparknyc.org/assets/images/things-to-see-and-do/attractions/spring-carousel-1.jpg",
+      blogImg2: "https://www.centralparknyc.org/assets/images/things-to-see-and-do/attractions/boathouse-carousel-featured-image.jpg",
+      blogImg3: "https://www.centralparknyc.org/assets/images/things-to-see-and-do/events/calendar/carousel/concert-carousel-featured-image.jpg",
+      blogImg4: img04
     },
     
     {

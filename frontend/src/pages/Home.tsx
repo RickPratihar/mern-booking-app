@@ -7,6 +7,7 @@ import ScrollToTop from "../components/ScrollToTop/ScrollToTop";
 import Testimonials from "../components/Testimonials";
 import DiscountPopup from "../components/DiscountPopup/DiscountPopup";
 
+
 const Home = () => {
   const { data: hotels } = useQuery("fetchQuery", () =>
     apiClient.fetchHotels()

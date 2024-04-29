@@ -8,7 +8,7 @@ const BlogPage: React.FC = () => {
   return (
     <>
       <Header />
-      <div className="flex justify-center items-center">
+      <div className="flex  justify-center items-center ">
         <div className="2xl:mx-auto 2xl:container lg:px-20 lg:py-16 md:py-12 md:px-6 py-9 px-4 w-96 sm:w-auto">
           <div className="flex flex-col items-center justify-center">
             <h1 className="text-4xl font-semibold leading-9 text-center text-gray-800">
@@ -20,7 +20,7 @@ const BlogPage: React.FC = () => {
             </p>
           </div>
           {blogData.map((item, index) => (
-            <div key={index} className="mt-12">
+            <div key={index} className="mt-12 inline-block pl-10 ">
               <p className="p-6 text-xs font-medium leading-3 text-white bg-gray-800 absolute top-0 right-0">
                 {item.date}
               </p>
