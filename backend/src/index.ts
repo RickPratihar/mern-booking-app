@@ -42,6 +42,19 @@ app.get("*", (req: Request, res: Response) => {
   res.sendFile(path.join(__dirname, "../../frontend/dist/index.html"));
 });
 
+
+const allowedOrigins = ['https://hotelbooking-dvni.onrender.com'];
+app.use(cors({
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    }
+}));
+
+
 app.listen(7000, () => {
   console.log("server running on localhost:7000");
 }); 

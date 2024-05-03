@@ -17,7 +17,7 @@ const Home = () => {
   const bottomRowHotels = hotels?.slice(2) || [];
 
   return (
-    <div className="space-y-3"> 
+    <div className="space-y-3 "> 
       <OfferSection/>
       <Blog/>
       <DiscountPopup/>
