@@ -32,6 +32,8 @@ app.use(
   })
 );
 
+app.use(cors());
+
 
 app.use(express.static(path.join(__dirname, "../../frontend/dist")));
 
