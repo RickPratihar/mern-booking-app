@@ -2,7 +2,7 @@ const Testimonials = () => {
   return (
     <section className="text-neutral-700 dark:text-neutral-300 pt-10">
       <div className="mx-auto text-center md:max-w-xl lg:max-w-3xl">
-        <h3 className="mb-6 text-3xl font-bold text-black">Testimonials</h3>
+        <h3 className="mb-6 text-3xl font-bold bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">Testimonials</h3>
         <p className=" md:mb-12 md:pb-0 text-black">
           "Discover what our guests have to say about their extraordinary
           experiences with us. Read firsthand accounts of unforgettable stays,

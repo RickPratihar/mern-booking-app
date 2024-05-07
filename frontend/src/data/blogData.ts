@@ -69,7 +69,7 @@ const blogData = [
       title: "Top 5 places for winter sports in South Korea",
       date:"3 min read: 15 November",
       imgUrl: img03,
-      description:"Ski Olympic slopes and jumps, before relaxing in a traditional Korean bathhouse",
+      description:"Ski Olympic slopes and jumps, before  traditional Korean bathhouse",
      
       des1:"South Korea’s popularity as a winter sports travel destination seems to be ever on the up. Having gotten plenty of exposure during the Winter Olympics in 2018, its state-of-the-art ski resorts continue to attract snow sports enthusiasts from far and wide. Whether you choose to stay in the actual Olympic village, Alpensia, or a resort that’s reachable by subway from Seoul, you can expect high-quality snow, accessibility and modern facilities. What’s more, the diverse terrain makes for some stunning views and, for added thrills, many slopes in South Korea are lit up for night skiing.Read on for the best places to visit in South Korea for the winter sports season (which typically lasts from December until March).",
       des2:"Head to the city of Yongin and the nearby Konjiam Resort for an easy winter day trip from Seoul – the latter being the closest ski resort to the capital (getting here takes under an hour from the Gangnam area). Whether you want to go sledding, skiing or snowboarding, you’ll find several scenic slopes that cater to a range of abilities.Another reason to visit Yongin is Everland, the largest theme park in South Korea and home to ‘The Snow Buster’, a huge and thrilling snow-sledding ride. Make Hotel Thesoom Forest your base while in Yongin.",

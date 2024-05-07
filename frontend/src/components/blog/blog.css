@@ -57,7 +57,7 @@
 }
 .blog-content .special-text {
   position: absolute;
-  bottom: -250px;
+  bottom: -300px;
   color: white;
   padding-left: 15px;
   width: 50ch;
@@ -67,7 +67,7 @@
 .blog-content .special-text2 {
   position: absolute;
   line-height: 20px;
-  bottom: -310px;
+  bottom: -350px;
   color: white;
   padding-left: 15px;
   width: 50ch;
