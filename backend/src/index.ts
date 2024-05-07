@@ -38,6 +38,18 @@ app.use("/api/my-hotels", myHotelRoutes)
 app.use("/api/hotels", hotelRoutes)
 app.use("/api/my-bookings", bookingRoutes);
 
+
+app.use(cors());
+app.use(cors({
+  origin: 'https://mern-hotel-booking-umqw.onrender.com'
+}));
+fetch('http://localhost:7000/api/my-hotels', {
+  mode: 'no-cors'
+  // Your other fetch options here
+});
+
+
+
 app.get("*", (req: Request, res: Response) => {
   res.sendFile(path.join(__dirname, "../../frontend/dist/index.html"));
 });
