@@ -11,6 +11,7 @@ import myHotelRoutes from './routes/my-hotels'
 import hotelRoutes from './routes/hotels'
 import bookingRoutes from "./routes/my-bookings";
 
+
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
@@ -31,6 +32,7 @@ app.use(
   })
 );
 
+
 app.use(express.static(path.join(__dirname, "../../frontend/dist")));
 
 app.use("/api/auth", authRoutes)
@@ -39,12 +41,6 @@ app.use("/api/my-hotels", myHotelRoutes)
 app.use("/api/hotels", hotelRoutes)
 app.use("/api/my-bookings", bookingRoutes);
 
-
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "https://mern-hotel-booking-umqw.onrender.com"); // update this line with your allowed origins
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
 
 
 app.get("*", (req: Request, res: Response) => {
