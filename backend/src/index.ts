@@ -23,12 +23,19 @@ const app = express();
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(
-  cors({
-    origin: process.env.FRONTEND_URL,
+
+const allowedOrigins = ['https://hotelbooking-dvni.onrender.com', 'https://mern-hotel-booking-umqw.onrender.com'];
+
+app.use(cors({
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     credentials: true,
-  })
-);
+}));
 
 app.use(express.static(path.join(__dirname, "../../frontend/dist")));
 
@@ -38,35 +45,10 @@ app.use("/api/my-hotels", myHotelRoutes)
 app.use("/api/hotels", hotelRoutes)
 app.use("/api/my-bookings", bookingRoutes);
 
-
-app.use(cors());
-app.use(cors({
-  origin: 'https://mern-hotel-booking-umqw.onrender.com'
-}));
-fetch('http://localhost:7000/api/my-hotels', {
-  mode: 'no-cors'
-  // Your other fetch options here
-});
-
-
-
 app.get("*", (req: Request, res: Response) => {
   res.sendFile(path.join(__dirname, "../../frontend/dist/index.html"));
 });
 
-
-const allowedOrigins = ['https://hotelbooking-dvni.onrender.com'];
-app.use(cors({
-    origin: function (origin, callback) {
-        if (!origin || allowedOrigins.includes(origin)) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    }
-}));
-
-
 app.listen(7000, () => {
   console.log("server running on localhost:7000");
-}); 
+});
