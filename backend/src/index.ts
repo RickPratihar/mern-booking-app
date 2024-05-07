@@ -23,24 +23,12 @@ const app = express();
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-const allowedOrigins = ['https://hotelbooking-dvni.onrender.com', 'https://mern-hotel-booking-umqw.onrender.com'];
-
-app.use(cors({
-    origin: function (origin, callback) {
-        if (!origin || allowedOrigins.includes(origin)) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
+app.use(
+  cors({
+    origin: https://mern-hotel-booking-umqw.onrender.com,
     credentials: true,
-}));
-
-app.use((req, res, next) => {
-  res.set('Cache-Control', 'no-store')
-  next()
-})
+  })
+);
 
 app.use(express.static(path.join(__dirname, "../../frontend/dist")));
 
@@ -54,6 +42,10 @@ app.get("*", (req: Request, res: Response) => {
   res.sendFile(path.join(__dirname, "../../frontend/dist/index.html"));
 });
 
+
+
 app.listen(7000, () => {
   console.log("server running on localhost:7000");
-});
+}); 
+
+
