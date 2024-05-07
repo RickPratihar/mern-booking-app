@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import * as apiClient from "./../api-client";
 import { AiFillStar } from "react-icons/ai";
 import GuestInfoForm from "../forms/GuestInfoForm/GuestInfoForm";
+import ReviewSection from "../components/Review/ReviewSection";
 
 const Detail = () => {
   const { hotelId } = useParams();
@@ -59,6 +60,7 @@ const Detail = () => {
           />
         </div>
       </div>
+      <ReviewSection />
     </div>
   );
 };

@@ -19,8 +19,6 @@ cloudinary.config({
 
 mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string);
 
-const isProduction = process.env.NODE_ENV === 'production';
-
 
 const app = express();
 app.use(cookieParser());
@@ -28,7 +26,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: isProduction ? process.env.FRONTEND_URL : 'http://localhost:5173',
+    origin: process.env.FRONTEND_URL,
     credentials: true,
   })
 );
@@ -40,6 +38,14 @@ app.use("/api/users", userRoutes)
 app.use("/api/my-hotels", myHotelRoutes)
 app.use("/api/hotels", hotelRoutes)
 app.use("/api/my-bookings", bookingRoutes);
+
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "https://mern-hotel-booking-umqw.onrender.com"); // update this line with your allowed origins
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 
 app.get("*", (req: Request, res: Response) => {
   res.sendFile(path.join(__dirname, "../../frontend/dist/index.html"));
