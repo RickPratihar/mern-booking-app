@@ -19,13 +19,16 @@ cloudinary.config({
 
 mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string);
 
+const isProduction = process.env.NODE_ENV === 'production';
+
+
 const app = express();
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL,
+    origin: isProduction ? process.env.FRONTEND_URL : 'http://localhost:5173',
     credentials: true,
   })
 );
@@ -43,18 +46,9 @@ app.get("*", (req: Request, res: Response) => {
 });
 
 
-const allowedOrigins = ['https://hotelbooking-dvni.onrender.com'];
-app.use(cors({
-    origin: function (origin, callback) {
-        if (!origin || allowedOrigins.includes(origin)) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    }
-}));
-
 
 app.listen(7000, () => {
   console.log("server running on localhost:7000");
 }); 
+
+
