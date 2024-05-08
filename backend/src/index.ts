@@ -50,9 +50,9 @@ app.get("*", (req: Request, res: Response) => {
 
 
 
-const PORT = process.env.PORT || 7000;
+const PORT: number = parseInt(process.env.PORT as string, 10) || 7000;
 
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on port ${PORT}`);
-}); 
+});
 
