@@ -27,8 +27,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: ["https://mern-hotel-booking-umqw.onrender.com"],
-    methods: ["POST", "GET"],
+    origin: process.env.FRONTEND_URL || '*',
     credentials: true,
   })
 );
