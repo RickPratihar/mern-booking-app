@@ -27,7 +27,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || '*',
+    origin: process.env.FRONTEND_URL,
     credentials: true,
   })
 );
@@ -50,9 +50,7 @@ app.get("*", (req: Request, res: Response) => {
 
 
 
-const PORT: number = parseInt(process.env.PORT as string, 10) || 7000;
-
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Server running on port ${PORT}`);
-});
+app.listen(7000, () => {
+  console.log("server running on localhost:7000");
+}); 
 
