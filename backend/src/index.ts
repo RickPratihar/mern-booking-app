@@ -27,7 +27,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: ["https://hotelbookingcollage.onrender.com"],
+    origin: ["https://mern-hotel-booking-umqw.onrender.com/"],
     methods: ["POST", "GET"],
     credentials: true,
   })
