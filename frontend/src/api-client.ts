@@ -3,7 +3,7 @@ import { SignInFormData } from "./pages/Signin";
 import {HotelSearchResponse, HotelType, PaymentIntentResponse, UserType} from '../../backend/src/shared/types'
 import { BookingFormData } from "./forms/BookingForm/BookingForm";
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
+const API_BASE_URL = import.meta.env.MODE === "development" ? import.meta.env.VITE_API_BASE_URL : "";
 
 export const fetchCurrentUser = async (): Promise<UserType> => {
   const response = await fetch(`${API_BASE_URL}/api/users/me`, {
@@ -175,9 +175,7 @@ export const signOut = async () => {
   };
   
   export const fetchHotels = async (): Promise<HotelType[]> => {
-    const response = await fetch(`${API_BASE_URL}/api/my-hotels`, {
-      credentials: "include",
-    });
+    const response = await fetch(`${API_BASE_URL}/api/hotels`);
   
     if (!response.ok) {
       throw new Error("Error fetching hotels");
