@@ -117,146 +117,132 @@ const Signin = () => {
   });
 
   return (
-    <>
-    <Header />
+    <div className="min-h-screen flex">
+      {/* Left Side - Image */}
       <div
-        id="login-popup"
-        tabIndex={-1}
-        // className="bg-black/50 overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 h-full items-center justify-center flex"
-        className="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 h-full items-center justify-center flex bg-cover bg-center bg-fixed bg-black/10"
+        className="hidden lg:flex w-1/2 bg-cover bg-center relative"
         style={{
           backgroundImage:
-            "url('https://www.thomascook.in/blog/wp-content/uploads/2023/04/beach-1.jpg')",
+            "url('https://images.unsplash.com/photo-1542314831-c6a4d14d837e?q=80&w=2000&auto=format&fit=crop')",
         }}
       >
-        <div className="relative p-4 w-full max-w-md h-full md:h-auto">
-          <div className="relative bg-white rounded-lg shadow">
-            <button
-              type="button"
-              className="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center popup-close"
-            >
-              <Link to="/">
-                <svg
-                  aria-hidden="true"
-                  className="w-5 h-5"
-                  fill="#c6c7c7"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                    clipRule="evenodd"
-                  ></path>
-                </svg>
-              </Link>
-              <span className="sr-only">Close popup</span>
-            </button>
-            <div className="p-5">
-              <h3 className="text-2xl mb-0.5 font-medium"></h3>
-              <p className="mb-4 text-sm font-normal text-gray-800"></p>
-
-              <div className="text-center">
-                <p className="mb-3 text-2xl font-semibold leading-5 text-slate-900">
-                  Login to your account
-                </p>
-                <p className="mt-2 text-sm leading-4 text-slate-600">
-                  You must be logged in to perform this action.
-                </p>
-              </div>
-
-              <div className="mt-7 flex flex-col gap-2">
-                <button className="inline-flex h-10 w-full items-center justify-center gap-2 rounded border border-slate-300 bg-white p-2 text-sm font-medium text-black outline-none focus:ring-2 focus:ring-[#333] focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-60">
-                  <img
-                    src="https://www.svgrepo.com/show/512317/github-142.svg"
-                    alt="GitHub"
-                    className="h-[18px] w-[18px] "
-                  />
-                  Continue with GitHub
-                </button>
-
-                <button className="inline-flex h-10 w-full items-center justify-center gap-2 rounded border border-slate-300 bg-white p-2 text-sm font-medium text-black outline-none focus:ring-2 focus:ring-[#333] focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-60">
-                  <img
-                    src="https://www.svgrepo.com/show/475656/google-color.svg"
-                    alt="Google"
-                    className="h-[18px] w-[18px] "
-                  />
-                  Continue with Google
-                </button>
-
-                <button className="inline-flex h-10 w-full items-center justify-center gap-2 rounded border border-slate-300 bg-white p-2 text-sm font-medium text-black outline-none focus:ring-2 focus:ring-[#333] focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-60">
-                  <img
-                    src="https://www.svgrepo.com/show/448234/linkedin.svg"
-                    alt="Google"
-                    className="h-[18px] w-[18px] "
-                  />
-                  Continue with LinkedIn
-                </button>
-              </div>
-
-              <div className="flex w-full items-center gap-2 py-6 text-sm text-slate-600">
-                <div className="h-px w-full bg-slate-200"></div>
-                OR
-                <div className="h-px w-full bg-slate-200"></div>
-              </div>
-
-              <form className="w-full" onSubmit={onSubmit}>
-                {/* <label htmlFor="email" className="sr-only"> 
-                  Email address
-                  </label> */}
-                <input
-                  type="email"
-                  autoComplete="email"
-                  {...register("email", { required: "This field is required" })}
-                  className="block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-black focus:ring-offset-1"
-                  placeholder="Email Address"
-                ></input>
-                {errors.email && (
-                  <span className="text-red-500">{errors.email.message}</span>
-                )}
-
-                <label htmlFor="password" className="sr-only">
-                  Password
-                </label>
-                <input
-                  type="password"
-                  autoComplete="current-password"
-                  className="mt-2 block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm outline-none placeholder:text-gray-400 focus:ring-2 focus:ring-black focus:ring-offset-1"
-                  placeholder="Password"
-                  {...register("password", {
-                    required: "This field is required",
-                    minLength: {
-                      value: 6,
-                      message: "Password must be at least 6 characters",
-                    },
-                  })}
-                ></input>
-                {errors.password && (
-                  <span className="text-red-500">
-                    {errors.password.message}
-                  </span>
-                )}
-
-                <p className="mb-3 mt-2 text-sm text-gray-500">
-                  <span className="text-sm font-bold">
-                    Not Registered ?{" "}
-                    <Link className="underline" to="/register">
-                      Create an account here
-                    </Link>
-                  </span>
-                </p>
-                <button
-                  type="submit"
-                  className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 dark:bg-blue-700 dark:text-white dark:hover:bg-blue-900 focus:outline-none focus:shadow-outline"
-                >
-                  Continue
-                </button>
-              </form>
-            </div>
-          </div>
+        <div className="absolute inset-0 bg-blue-900/40"></div>
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-white p-12 text-center">
+          <h1 className="text-5xl font-extrabold mb-4 drop-shadow-lg">
+            DreamStayHub
+          </h1>
+          <p className="text-xl font-medium drop-shadow-md text-white/90">
+            Your perfect gateway to extraordinary stays.
+          </p>
         </div>
       </div>
-    </>
+
+      {/* Right Side - Form */}
+      <div className="w-full lg:w-1/2 flex items-center justify-center bg-slate-50 p-6 md:p-12 relative">
+        <div className="w-full max-w-md bg-white p-8 md:p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100">
+          <Link
+            to="/"
+            className="text-sm font-bold text-blue-600 hover:text-blue-700 transition-colors mb-8 inline-flex items-center gap-2"
+          >
+            <span>&larr;</span> Back to Home
+          </Link>
+          
+          <div>
+            <h2 className="text-3xl font-extrabold text-slate-800 mb-2">
+              Welcome Back
+            </h2>
+            <p className="text-slate-500 text-sm mb-8">
+              Please enter your details to sign in to your account.
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-3 mb-6">
+            <button className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition-all hover:bg-slate-50 hover:border-slate-300 outline-none">
+              <img
+                src="https://www.svgrepo.com/show/475656/google-color.svg"
+                alt="Google"
+                className="h-5 w-5"
+              />
+              Continue with Google
+            </button>
+            <button className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition-all hover:bg-slate-50 hover:border-slate-300 outline-none">
+              <img
+                src="https://www.svgrepo.com/show/512317/github-142.svg"
+                alt="GitHub"
+                className="h-5 w-5"
+              />
+              Continue with GitHub
+            </button>
+          </div>
+
+          <div className="flex w-full items-center gap-3 py-4 text-xs font-semibold text-slate-400 uppercase tracking-widest">
+            <div className="h-px w-full bg-slate-200"></div>
+            OR
+            <div className="h-px w-full bg-slate-200"></div>
+          </div>
+
+          <form className="w-full mt-2" onSubmit={onSubmit}>
+            <div className="mb-4">
+              <label className="block text-sm font-bold text-slate-700 mb-1.5" htmlFor="email">
+                Email Address
+              </label>
+              <input
+                id="email"
+                type="email"
+                autoComplete="email"
+                {...register("email", { required: "This field is required" })}
+                className="block w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-800 outline-none placeholder:text-slate-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
+                placeholder="name@example.com"
+              />
+              {errors.email && (
+                <span className="text-red-500 text-xs font-semibold mt-1 block">
+                  {errors.email.message}
+                </span>
+              )}
+            </div>
+
+            <div className="mb-6">
+              <label className="block text-sm font-bold text-slate-700 mb-1.5" htmlFor="password">
+                Password
+              </label>
+              <input
+                id="password"
+                type="password"
+                autoComplete="current-password"
+                {...register("password", {
+                  required: "This field is required",
+                  minLength: {
+                    value: 6,
+                    message: "Password must be at least 6 characters",
+                  },
+                })}
+                className="block w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-800 outline-none placeholder:text-slate-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
+                placeholder="••••••••"
+              />
+              {errors.password && (
+                <span className="text-red-500 text-xs font-semibold mt-1 block">
+                  {errors.password.message}
+                </span>
+              )}
+            </div>
+
+            <button
+              type="submit"
+              className="w-full rounded-xl bg-blue-600 px-4 py-3 text-sm font-bold text-white transition-all hover:bg-blue-700 shadow-md hover:shadow-blue-600/20 active:scale-[0.98]"
+            >
+              Sign In
+            </button>
+
+            <p className="mt-8 text-center text-sm font-medium text-slate-600">
+              Don't have an account?{" "}
+              <Link className="text-blue-600 hover:text-blue-700 font-bold hover:underline" to="/register">
+                Sign up here
+              </Link>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
   );
 };
 

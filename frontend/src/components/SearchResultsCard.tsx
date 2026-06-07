@@ -7,54 +7,62 @@ type Props = {
 
 const SearchResultsCard = ({ hotel }: Props) => {
   return (
-    <div className="grid grid-cols-1 xl:grid-cols-[2fr_3fr] border border-slate-300 rounded-lg p-8 gap-8">
-      <div className="w-full h-[300px]">
+    <div className="grid grid-cols-1 xl:grid-cols-[2fr_3fr] bg-white border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300 rounded-2xl p-5 gap-6">
+      <div className="w-full h-[250px] xl:h-[300px] rounded-xl overflow-hidden shrink-0">
         <img
           src={hotel.imageUrls[0]}
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500"
+          alt={hotel.name}
         />
       </div>
-      <div className="grid grid-rows-[1fr_2fr_1fr]">
+      <div className="flex flex-col justify-between">
         <div>
-          <div className="flex items-center">
+          <div className="flex items-center mb-1">
             <span className="flex">
-              {Array.from({ length: hotel.starRating }).map(() => (
-                <AiFillStar className="fill-yellow-400" />
+              {Array.from({ length: hotel.starRating }).map((_, idx) => (
+                <AiFillStar key={idx} className="fill-yellow-400" />
               ))}
             </span>
-            <span className="ml-1 text-sm">{hotel.type}</span>
+            <span className="ml-2 text-xs font-bold text-slate-500 uppercase tracking-wider bg-slate-100 px-2 py-0.5 rounded-full">
+              {hotel.type}
+            </span>
           </div>
           <Link
             to={`/detail/${hotel._id}`}
-            className="text-2xl font-bold cursor-pointer"
+            className="text-2xl font-extrabold text-slate-800 hover:text-blue-600 transition-colors cursor-pointer"
           >
             {hotel.name}
           </Link>
         </div>
 
-        <div>
-          <div className="line-clamp-4">{hotel.description}</div>
+        <div className="my-4">
+          <p className="line-clamp-3 text-slate-600 text-sm leading-relaxed">
+            {hotel.description}
+          </p>
         </div>
 
-        <div className="grid grid-cols-2 items-end whitespace-nowrap">
-          <div className="flex gap-1 items-center">
-            {hotel.facilities.slice(0, 3).map((facility) => (
-              <span className="bg-slate-300 p-2 rounded-lg font-bold text-xs whitespace-nowrap">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mt-auto">
+          <div className="flex flex-wrap gap-2 items-center">
+            {hotel.facilities.slice(0, 3).map((facility, idx) => (
+              <span key={idx} className="bg-slate-50 border border-slate-200 text-slate-600 px-3 py-1 rounded-lg font-semibold text-xs whitespace-nowrap">
                 {facility}
               </span>
             ))}
-            <span className="text-sm">
-              {hotel.facilities.length > 3 &&
-                `+${hotel.facilities.length - 3} more`}
-            </span>
+            {hotel.facilities.length > 3 && (
+              <span className="text-xs font-bold text-slate-400">
+                +{hotel.facilities.length - 3} more
+              </span>
+            )}
           </div>
-          <div className="flex flex-col items-end gap-1">
-            <span className="font-bold">₹{hotel.pricePerNight} per night</span>
+          <div className="flex flex-col items-start sm:items-end gap-2 w-full sm:w-auto">
+            <span className="font-extrabold text-lg text-slate-800">
+              ₹{hotel.pricePerNight} <span className="text-sm font-medium text-slate-500">/ night</span>
+            </span>
             <Link
               to={`/detail/${hotel._id}`}
-              className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+              className="w-full sm:w-auto px-6 py-2.5 font-bold text-white bg-blue-600 rounded-xl hover:bg-blue-700 shadow-md transition-all text-center"
             >
-              View More
+              View Details
             </Link>
           </div>
         </div>

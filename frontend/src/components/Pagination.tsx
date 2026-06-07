@@ -11,7 +11,7 @@ export type Props = {
     }
     return (
         <div className="flex justify-center">
-          <ul className="flex border border-slate-300">
+          <ul className="flex border border-slate-300 ">
             {pageNumbers.map((number) => (
               <li className={`px-2 py-1 ${page === number ? "bg-gray-200" : ""}`}>
                 <button onClick={() => onPageChange(number)}>{number}</button>

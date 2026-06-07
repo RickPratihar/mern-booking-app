@@ -7,97 +7,106 @@ import { useState } from "react";
 const Header = () => {
   const { isLoggedIn } = useAppContext();
   const [nav, setNav] = useState(false);
+
   return (
-    <div className="p-10 bg-blue-800 py-6 top-0 sticky z-40 ">
-      <div className="container mx-auto flex justify-between ">
-        <span className="text-xl md:text-2xl lg:text-3xl text-white font-bold tracking-tight font-">
-          <Link to="/">DreamStayHub</Link>
+    <header className="sticky top-0 z-50 bg-white border-b border-slate-200 w-full py-4 px-6 md:px-12 transition-all duration-300 shadow-sm">
+      <div className="max-w-7xl mx-auto flex justify-between items-center">
+        {/* Brand Logo */}
+        <span className="text-xl md:text-2xl font-extrabold tracking-tight">
+          <Link to="/" className="text-blue-700 hover:opacity-90">
+            DreamStayHub
+          </Link>
         </span>
-        <span className=" space-x-2 hidden md:flex ">
-          <Link
-            className=" flex items-center text-white px-3  font-bold hover:bg-blue-600 rounded"
-            to="/about"
-          >
+
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-6">
+          <Link to="/about" className="text-slate-600 hover:text-blue-600 font-medium text-sm transition-colors duration-200">
             About Us
           </Link>
-          <Link
-            className=" flex items-center text-white px-3  font-bold hover:bg-blue-600 rounded"
-            to="/contact"
-          >
-            Contact us
+          <Link to="/contact" className="text-slate-600 hover:text-blue-600 font-medium text-sm transition-colors duration-200">
+            Contact Us
           </Link>
-          <Link
-            className=" flex items-center text-white px-3  font-bold hover:bg-blue-600 rounded"
-            to="/blog"
-          >
+          <Link to="/blog" className="text-slate-600 hover:text-blue-600 font-medium text-sm transition-colors duration-200">
             Blog
           </Link>
+          
           {isLoggedIn ? (
-            <>
-              <Link
-                className=" flex items-center text-white px-3  font-bold hover:bg-blue-600 rounded"
-                to="/my-bookings"
-              >
+            <div className="flex items-center gap-6 pl-6 border-l border-slate-200">
+              <Link to="/my-bookings" className="text-slate-600 hover:text-blue-600 font-medium text-sm transition-colors duration-200">
                 My Bookings
               </Link>
-              <Link
-                className="flex items-center text-white px-3  font-bold hover:bg-blue-600 rounded "
-                to="/my-hotel"
-              >
+              <Link to="/my-hotel" className="text-slate-600 hover:text-blue-600 font-medium text-sm transition-colors duration-200">
                 My Hotels
               </Link>
               <SignOutButton />
-            </>
+            </div>
           ) : (
+            <div className="pl-6 border-l border-slate-200">
+              <Link
+                to="/sign-in"
+                className="px-6 py-2 text-white bg-blue-600 hover:bg-blue-700 font-bold rounded text-sm transition-all duration-300"
+              >
+                Login
+              </Link>
+            </div>
+          )}
+        </nav>
+
+        {/* Mobile Toggle Button */}
+        <div className="md:hidden">
+          <button
+            onClick={() => setNav(!nav)}
+            className="text-slate-600 hover:text-blue-600 focus:outline-none p-1.5 transition-colors duration-200"
+            aria-label="Toggle Menu"
+          >
+            {nav ? <FaTimes size={22} /> : <FaBars size={22} />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Navigation Dropdown */}
+      <div
+        className={`absolute top-full left-0 w-full bg-white border-b border-slate-200 shadow-xl flex flex-col items-center gap-4 py-8 px-6 text-center md:hidden transition-all duration-300 ${
+          nav
+            ? "opacity-100 translate-y-0 visible"
+            : "opacity-0 -translate-y-4 invisible pointer-events-none"
+        }`}
+      >
+        <Link to="/about" onClick={() => setNav(false)} className="text-slate-700 hover:text-blue-600 font-bold text-base py-1.5 w-full">
+          About Us
+        </Link>
+        <Link to="/contact" onClick={() => setNav(false)} className="text-slate-700 hover:text-blue-600 font-bold text-base py-1.5 w-full">
+          Contact Us
+        </Link>
+        <Link to="/blog" onClick={() => setNav(false)} className="text-slate-700 hover:text-blue-600 font-bold text-base py-1.5 w-full">
+          Blog
+        </Link>
+        
+        {isLoggedIn ? (
+          <div className="flex flex-col items-center gap-4 w-full mt-2 pt-4 border-t border-slate-200">
+            <Link to="/my-bookings" onClick={() => setNav(false)} className="text-slate-700 hover:text-blue-600 font-bold text-base py-1.5 w-full">
+              My Bookings
+            </Link>
+            <Link to="/my-hotel" onClick={() => setNav(false)} className="text-slate-700 hover:text-blue-600 font-bold text-base py-1.5 w-full">
+              My Hotels
+            </Link>
+            <div className="mt-2 w-full max-w-[200px]" onClick={() => setNav(false)}>
+              <SignOutButton />
+            </div>
+          </div>
+        ) : (
+          <div className="w-full mt-2 pt-4 border-t border-slate-200">
             <Link
               to="/sign-in"
-              className="text-white bg-[#1da1f2] hover:bg-[#1da1f2]/90 focus:ring-4 focus:outline-none focus:ring-[#1da1f2]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#1da1f2]/55 me-2 mb-2"
+              onClick={() => setNav(false)}
+              className="inline-block w-full max-w-[200px] px-6 py-2.5 text-center text-white bg-blue-600 font-bold rounded text-base"
             >
               Login
             </Link>
-          )}
-        </span>
+          </div>
+        )}
       </div>
-
-      {/* for mobile device  */}
-      <div
-        onClick={() => setNav(!nav)}
-        className="cursor-pointer pr-4 z-10 text-white md:hidden absolute top-4 right-5 "
-      >
-        {nav ? <FaTimes size={30} /> : <FaBars size={30} />}
-      </div>
-
-      {nav && (
-        <div className="container mx-auto flex justify-between md:hidden  delay-500">
-          <span className="flex flex-col absolute  pt-10 mr-10 mt-2 gap-5 w-full h-screen bg-gradient-to-b from-blue-900 to-gray-800 text-white ">
-            {isLoggedIn ? (
-              <>
-                <Link
-                  className=" flex items-center justify-center text-xl text-white px-3  font-bold hover:bg-blue-600 rounded"
-                  to="/my-bookings"
-                >
-                  My Bookings
-                </Link>
-                <Link
-                  className="flex items-center justify-center text-xl text-white px-3  font-bold hover:bg-blue-600 rounded "
-                  to="/my-hotel"
-                >
-                  My Hotels
-                </Link>
-                <SignOutButton />
-              </>
-            ) : (
-              <Link
-                to="/sign-in"
-                className=" flex items-center justify-center w-32 h-10 ml-36 mt-20 font-bold hover:bg-transparent hover:text-white bg-white border text-black "
-              >
-                Sign in
-              </Link>
-            )}
-          </span>
-        </div>
-      )}
-    </div>
+    </header>
   );
 };
 

@@ -72,10 +72,10 @@ const Search = () => {
 
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-[250px_1fr] gap-5">
-      <div className="rounded-lg border border-slate-300 p-5 h-fit md:sticky lg:sticky top-10">
-        <div className="space-y-5">
-          <h3 className="text-lg font-semibold border-b border-slate-300 pb-5">
+    <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6 max-w-7xl mx-auto">
+      <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 h-fit md:sticky lg:sticky top-6">
+        <div className="space-y-6">
+          <h3 className="text-xl font-bold text-slate-800 border-b border-slate-100 pb-4">
             Filter by:
           </h3>
           <StarRatingFilter
@@ -96,18 +96,18 @@ const Search = () => {
           />
         </div>
       </div>
-      <div className="flex flex-col gap-5">
-        <div className="flex justify-between items-center">
-          <span className="text-xl font-bold">
+      <div className="flex flex-col gap-6">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-white p-4 rounded-2xl border border-slate-100 shadow-sm">
+          <span className="text-lg font-bold text-slate-800">
             {hotelData?.pagination.total} Hotels found
             {search.destination ? ` in ${search.destination}` : ""}
           </span>
           <select
             value={sortOption}
             onChange={(event) => setSortOption(event.target.value)}
-            className="p-2 border rounded-md"
+            className="p-2.5 border border-slate-200 rounded-xl bg-slate-50 text-sm font-semibold text-slate-700 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all cursor-pointer"
           >
-            <option value="">Sort By</option>
+            <option value="">Sort By Recommended</option>
             <option value="starRating">Star Rating</option>
             <option value="pricePerNightAsc">
               Price Per Night (low to high)
@@ -118,9 +118,9 @@ const Search = () => {
           </select>
         </div>
         {hotelData?.data.map((hotel) => (
-          <SearchResultsCard hotel={hotel} />
+          <SearchResultsCard hotel={hotel} key={hotel._id} />
         ))}
-        <div>
+        <div className="mt-4 flex justify-center">
           <Pagination
             page={hotelData?.pagination.page || 1}
             pages={hotelData?.pagination.pages || 1}

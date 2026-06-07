@@ -79,10 +79,11 @@ const Wrapper = styled.section`
     }
   }
 
-  @media  (max-width:600px) {
+  @media (max-width: 600px) {
     .top-btn {
-      right: 0;
-      left: 75%;
+      right: 1.5rem;
+      left: auto;
+      bottom: 1.5rem;
       width: 3rem;
       height: 3rem;
     }

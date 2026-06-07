@@ -1,5 +1,5 @@
-import React, { useContext, useState } from "react";
-import Toast from "../components/Toast";
+import React, { useContext } from "react";
+import toast, { Toaster } from "react-hot-toast";
 import { useQuery } from "react-query";
 import * as apiClient from '../api-client'
 import { loadStripe, Stripe } from "@stripe/stripe-js";
@@ -26,9 +26,6 @@ export const AppContextProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [toast, setToast] = useState<ToastMessage | undefined>(undefined);
-
-
   const { isError } = useQuery("validateToken", apiClient.validateToken, {
     retry: false,
   });
@@ -37,19 +34,35 @@ export const AppContextProvider = ({
     <AppContext.Provider
       value={{
         showToast: (toastMessage) => {
-            setToast(toastMessage);
+          if (toastMessage.type === "SUCCESS") {
+            toast.success(toastMessage.message, {
+              style: {
+                background: "#0f172a",
+                color: "#fff",
+                borderRadius: "12px",
+                fontSize: "14px",
+                fontWeight: "600",
+                padding: "12px 20px",
+              },
+            });
+          } else {
+            toast.error(toastMessage.message, {
+              style: {
+                background: "#be123c",
+                color: "#fff",
+                borderRadius: "12px",
+                fontSize: "14px",
+                fontWeight: "600",
+                padding: "12px 20px",
+              },
+            });
+          }
         },
         isLoggedIn: !isError,
         stripePromise,
       }}
     >
-      {toast && (
-        <Toast
-          message={toast.message}
-          type={toast.type}
-          onClose={() => setToast(undefined)}
-        />
-      )}
+      <Toaster position="top-right" reverseOrder={false} />
       {children}
     </AppContext.Provider>
   );
