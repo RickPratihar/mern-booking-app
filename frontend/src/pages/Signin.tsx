@@ -3,7 +3,6 @@ import { useMutation, useQueryClient } from "react-query";
 import * as apiClient from "../api-client";
 import { useAppContext } from "../contexts/AppContext";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import Header from "../components/Header";
 
 export type SignInFormData = {
   email: string;
