@@ -27,10 +27,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL,
+    origin: process.env.FRONTEND_URL || 'https://mern-hotel-booking-umqw.onrender.com',
     credentials: true,
   })
 );
+
 
 
 app.use(express.static(path.join(__dirname, "../../frontend/dist")));
@@ -52,5 +53,4 @@ app.get("*", (req: Request, res: Response) => {
 app.listen(7000, () => {
   console.log("server running on localhost:7000");
 }); 
-
 
